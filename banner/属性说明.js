@@ -1,8 +1,3 @@
-//http://meiyifang.uz.taobao.com
-//U优生活购物网站 欢迎您
-//买吧
-//PC端 http://www.youshopping.cn
-//手机端 http://m.youshopping.cn
 //属性说明：自己按照自己想实现哪些效果直接引用！
 
 $(window).load(function() {
