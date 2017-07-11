@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery flexslider实例</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+</head>
+<body>
+
+
+<div id="demo01" class="flexslider">
+	<ul class="slides">
+		<li><div class="img"><a href="http://meiyifang.uz.taobao.com" target="_blank"><img src="images/index_banner_bg.jpg" width="100%" height="100%" alt="" /></a></div></li>
+		<li><div class="img"><a href="http://meiyifang.uz.taobao.com" target="_blank"><img src="images/index_banner_bg.jpg" width="100%" height="100%" alt="" /></a></div></li>
+		<li><div class="img"><a href="http://meiyifang.uz.taobao.com" target="_blank"><img src="images/index_banner_bg.jpg" width="100%" height="100%"alt="" /></a></div></li>
+		<li><div class="img"><a href="http://meiyifang.uz.taobao.com" target="_blank"><img src="images/index_banner_bg.jpg" width="100%" height="100%" alt="" /></a></div></li>
+		<li><div class="img"><a href="http://meiyifang.uz.taobao.com" target="_blank"><img src="images/index_banner_bg.jpg" width="100%" height="100%" alt="" /></a></div></li>
+	</ul>
+</div><!--flexslider end-->
+
+<div id="demo02" class="flexslider">
+	<ul class="slides">
+		<li><div class="img"><a href="http://meiyifang.uz.taobao.com" target="_blank"><img src="images/qiang.png"  alt="" /></a></div></li>
+		<li><div class="img"><a href="http://meiyifang.uz.taobao.com" target="_blank"><img src="images/tiao.png" alt="" /></a></div></li>
+		<li><div class="img"><a href="http://meiyifang.uz.taobao.com" target="_blank"><img src="images/chaping.png" alt="" /></a></div></li>
+	</ul>
+</div><!--flexslider end-->
+<script type="text/javascript" src="js/slider.js"></script> 
+<script type="text/javascript">
+$(function(){
+	//方法引用直接引用jq插件，然后在这引用flexslider，属性自己按照文档中的说明自己定义！请查看属性说明！
+	$('#demo01').flexslider({
+		animation: "slide",
+		direction:"horizontal",
+		easing:"swing",
+		slideshow: true,                
+		slideshowSpeed: 3000,           
+		animationDuration: 600,        
+		directionNav: false,             
+		controlNav: false, 
+	});
+
+	$('#demo02').flexslider({
+		animation: "slide",
+		direction:"horizontal",
+		easing:"swing",
+		slideshow: false,          
+		directionNav: true,             
+		controlNav: false, 
+	});
+	
+	
+	
+});
+</script>
+
+</body>
+</html>
