@@ -7,7 +7,27 @@ legend{ color: #666; font-weight: 800; background: #fff; border: #D0D0D0 solid 1
 .wrapper{ margin:0px 20px;}
 .titleUI{ border-bottom:solid 1px #E5E8EA; height:40px; line-height:40px; font-size:14px; font-weight:bold;}
 .titleUI h3{ border-bottom:4px solid #8CBA51; float:left; height:37px; padding:0px 3px;}
+.info {
+  margin: 50px auto 0;
+  color: #bfbfbf;
+  font-size: 15px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
 
+.info p {
+  line-height: 1;
+}
+
+.info a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
 .formUI{ line-height:30px; font-size:14px; margin-top:10px}
 .formUI p{ margin:2px; display:block; float: left; width:800px; font-size:12px; color:#666}
 .formUI p .inputclass{line-height:22px; height:22px;padding:2px;border: 1px solid #cccccc;font-size: 14px;font-family:arial,"宋体";color: #999;  float:left;

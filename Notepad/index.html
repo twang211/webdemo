@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>本地留言板</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+<body>
+    <section id="app">
+        <!-- 输入框 -->
+        <header class="header">
+            <h1>本地留言板</h1>
+            <input v-model="temp.name" autofocus="autofocus" autocomplete="off" placeholder="请输入昵称"
+              class="new-todo" />
+              <input v-model="temp.text" autofocus="autofocus" autocomplete="off" placeholder="请输入留言内容"
+                class="new-todo" />
+                <button class="textbtn textbtn-red" @click="add">提交</button>
+        </header>
+        
+        <!-- 记事本内容列表 -->
+        <section class="main">
+            <ul class="todo-list">
+              <li class="todo" v-for="(item,index) in list">
+                <div class="view">
+                  <span class="index">{{ index+1 }}.</span>
+                  <label>昵称：<span style="color: red;">{{ item.name }}</span></label>
+                  <label>留言内容：<span style="color:blue">{{ item.text }}</span></label>
+                  <label>留言时间: <span style="color:green">{{ item.time }}</span></label>
+                  <button class="destroy" @click="remove(index)"></button>
+                </div>
+              </li>
+            </ul>
+        </section>
+
+        <!-- 记事本统计信息 -->
+        <footer class="footer" v-show="list.length!=0">
+            <span class="todo-count" v-if="list.length!=0">
+              <strong>{{ list.length }}</strong> items left
+            </span>
+            <button v-show="list.length!=0" class="clear-completed" @click="clear">
+              Clear
+            </button>
+        </footer>
+    </section>
+    <!-- 底部 -->
+    <footer class="info">
+      <p>技术支持：
+        <a href="http://www.mrnaas.com/" target="_blank" style="color: red;">MN乐享</a>
+      </p>
+    </footer>
+    <script src="utils/vue.js"></script>
+    <script src="utils/index.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                temp:{
+                    name:null,
+                    text:null
+                },
+                list: []
+            },
+            methods: {
+                add: function () {
+                    let time = parseTime(Date())
+                    let obj = JSON.parse(JSON.stringify(this.temp))//为了防止错误发生，采用深拷贝
+                    if(obj.name && obj.text){
+                        obj.time = time
+                        this.list.push(obj);
+                    }else{
+                        alert("留言昵称/留言内容必填！")
+                    }
+                },
+                remove: function (index) {
+                    console.log("删除");
+                    console.log(index);
+                    this.list.splice(index, 1);
+                },
+                clear: function () {
+                    this.list = [];
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>
