@@ -2,12 +2,12 @@
  * Created with PyCharm.
  * User: Administrator
  * Date: 14-9-11
- * Time: ÉÏÎç11:18
+ * Time: ä¸Šåˆ11:18
  * To change this template use File | Settings | File Templates.
  */
-/* ¹²ÓÃ js Ä£¿é *
+/* å…±ç”¨ js æ¨¡å— *
 
-/* Ê±¼ä²å¼ş Ê¹ÓÃ */
+/* æ—¶é—´æ’ä»¶ ä½¿ç”¨ */
 
           
       
@@ -33,7 +33,7 @@
             onClose : function(dateText, inst) {
                 if (dateText < $("input[name=startDate]").val()){
                   $( "#endDate" ).datepicker( "show" );
-				    alert("½áÊøÈÕÆÚ²»ÄÜĞ¡ÓÚ¿ªÊ¼ÈÕÆÚ£¡");
+				    alert("ç»“æŸæ—¥æœŸä¸èƒ½å°äºå¼€å§‹æ—¥æœŸï¼");
 					//$("#endDate").val(newdate)
                 }
             }
@@ -84,20 +84,20 @@ $(function(){
         timeStr = nowDate.getFullYear() + '/' + (nowDate.getMonth()+1) + '/' + nowDate.getDate();
         nowDate.setDate(nowDate.getDate()+parseInt(-1));
         var endDateStr = nowDate.getFullYear() + '/'+  (nowDate.getMonth()+1) + '/' + nowDate.getDate();
-		$(".ui-datepicker-time").attr("value",endDateStr +"¡ª"+ timeStr)
+		$(".ui-datepicker-time").attr("value",endDateStr +"â€”"+ timeStr)
 		$("#startDate").attr("value",endDateStr)
 		$("#endDate").attr("value",timeStr)
     });
 
 
     function timeConfig(time){
-		//¿ì½İ²Ëµ¥µÄ¿ØÖÆ
+		//å¿«æ·èœå•çš„æ§åˆ¶
         var nowDate = new Date();
-        timeStr = 'Ò»' + nowDate.getFullYear() + '/' + (nowDate.getMonth()+1) + '/' + nowDate.getDate();
+        timeStr = 'ä¸€' + nowDate.getFullYear() + '/' + (nowDate.getMonth()+1) + '/' + nowDate.getDate();
         nowDate.setDate(nowDate.getDate()+parseInt(time));
         var endDateStr = nowDate.getFullYear() + '/'+  (nowDate.getMonth()+1) + '/' + nowDate.getDate();
         if(time == -1){
-            endDateStr += 'Ò»' + endDateStr;
+            endDateStr += 'ä¸€' + endDateStr;
         }else{
             endDateStr += timeStr;
         }
@@ -105,10 +105,10 @@ $(function(){
     }
 
     function datePickers(){
-		//×Ô¶¨Òå²Ëµ¥
+		//è‡ªå®šä¹‰èœå•
         var startDate = $("#startDate").val();
         var endDate = $("#endDate").val();
-        var dateList = startDate +'Ò»'+ endDate;
+        var dateList = startDate +'ä¸€'+ endDate;
         $(".ui-datepicker-time").val(dateList);
         $(".ui-datepicker-css").css("display","none");
 //        getAppCondtion()
